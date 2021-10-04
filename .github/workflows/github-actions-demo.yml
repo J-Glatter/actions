@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Bumping the version
-        if: contains(github.event.head_commit.message, 'minor') || contains(github.event.head_commit.message, 'MINOR' || contains(github.event.head_commit.message, 'Minor')
+        if: contains(github.event.head_commit.message, 'minor') || contains(github.event.head_commit.message, 'MINOR') || contains(github.event.head_commit.message, 'Minor')
         run: |
           echo "bumping version to blah"
           echo "This is a minor version"
