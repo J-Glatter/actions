@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/J-Glatter/actions.git",
   "author": "Joe Glatter <jozsef.glatter@matchesfashion.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+
+  }
 }
