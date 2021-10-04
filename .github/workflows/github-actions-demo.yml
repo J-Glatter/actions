@@ -1,0 +1,39 @@
+name: Github Demo
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bump for minor version
+        if: contains(github.event.head_commit.message, 'minor') || contains(github.event.head_commit.message, 'MINOR') || contains(github.event.head_commit.message, 'Minor')
+        run: |
+          echo "bumping version to minor"
+          echo "This is a minor version"
+      - name: Bump for major version
+        if: contains(github.event.head_commit.message, 'major') || contains(github.event.head_commit.message, 'MAJOR') || contains(github.event.head_commit.message, 'Major')
+        run: |
+          echo "bumping version to major"
+          echo "This is a major version"
+      - name: Bump for patched version
+        if: contains(github.event.head_commit.message, 'patch') || contains(github.event.head_commit.message, 'PATCH') || contains(github.event.head_commit.message, 'Patch') || contains(github.event.head_commit.message, 'patched') || contains(github.event.head_commit.message, 'PATCHED') || contains(github.event.head_commit.message, 'Patched')
+        run: |
+          echo "bumping version to patch"
+          echo "This is a patch version"
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event.head_commit.message }} event WHEY."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
