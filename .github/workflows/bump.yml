@@ -1,0 +1,34 @@
+#name: Create PR for new Kering schema
+#
+#on:
+#  workflow_dispatch:
+#  push:
+#    branches:
+#      - main
+#
+#jobs:
+#  bump-version:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v2
+#      - name: Set npm version
+#        run: npm install --global npm@7
+#      - name: Minor
+#        if: ${{ github.ref == *_minor}}
+#        run: npm version minor
+#
+#      - name: Major
+#        if: ${{ github.ref == *_major}}
+#        run: npm version major
+#
+#      - name: Patch
+#        if: ${{ github.ref == *_patch}}
+#        run: npm version patch
+#
+#      - name: Create Pull Request
+#        uses: peter-evans/create-pull-request@v3
+#        with:
+#          commit-message: 'Kering interfaces - Automated version bump'
+#          title: 'Kering interfaces - Automated version bump'
+#          branch: 'kering-version-bump'

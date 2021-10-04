@@ -1,0 +1,8 @@
+{
+  "name": "actions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/J-Glatter/actions.git",
+  "author": "Joe Glatter <jozsef.glatter@matchesfashion.com>",
+  "license": "MIT"
+}
