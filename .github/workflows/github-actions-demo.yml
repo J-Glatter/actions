@@ -1,11 +1,8 @@
 name: Github Demo
-
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
-
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
